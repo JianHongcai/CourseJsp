@@ -72,8 +72,8 @@
 							<tr>
 								<td valign="middle" align="right">
 									验证码:
-									<img id="num" src="image" />
-									<a href="javascript:;" onclick="document.getElementById('num').src = 'image?'+(new Date()).getTime()">换一张</a>
+									<img id="num" src="${pageContext.request.contextPath}/sys/student/generateImgCode" />
+									<a href="javascript:;" onclick="document.getElementById('num').src = '/sys/student/generateImgCode?'+(new Date()).getTime()">换一张</a>
 								</td>
 								<td valign="middle" align="left">
 									<input type="text" class="inputgri" name="number" />
