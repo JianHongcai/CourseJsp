@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -58,13 +59,13 @@
 							<td >男</td>
 							<td>
 								<a href="">删除</a>&nbsp;
-								<a href="updateEmp.html">更新</a>
+								<a href="updateEmp.jsp">更新</a>
 							</td>
 						</tr>
 
 					</table>
 					<p>
-						<a href="addEmp.html">添加员工信息</a>
+						<a href="addEmp.jsp">添加员工信息</a>
 					</p>
 				</div>
 			</div>

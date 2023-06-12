@@ -1,12 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html >
+<html>
 	<head>
-		<title>add Emp</title>
+		<title>regist</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css"
-			href="./css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
-
 	<body>
 		<div id="wrap">
 			<div id="top_content">
@@ -19,7 +18,7 @@
 						</div>
 						<div id="topheader">
 							<h1 id="title">
-								<a href="#">Main</a>
+								<a href="#">main</a>
 							</h1>
 						</div>
 						<div id="navigation">
@@ -29,14 +28,22 @@
 					<p id="whereami">
 					</p>
 					<h1>
-						添加员工信息:
+						注册
 					</h1>
-					<form th:action="@{/emp/save}" method="post">
+					<form action="login.html" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
 							<tr>
 								<td valign="middle" align="right">
-									name:
+									用户名:
+								</td>
+								<td valign="middle" align="left">
+									<input type="text" class="inputgri" name="username" />
+								</td>
+							</tr>
+							<tr>
+								<td valign="middle" align="right">
+									真实姓名:
 								</td>
 								<td valign="middle" align="left">
 									<input type="text" class="inputgri" name="name" />
@@ -44,41 +51,44 @@
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									salary:
+									密码:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="salary" />
+									<input type="password" class="inputgri" name="pwd" />
 								</td>
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									bir:
+									性别:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="bir" />
+									男
+									<input type="radio" class="inputgri" name="sex" value="m" checked="checked"/>
+									女
+									<input type="radio" class="inputgri" name="sex" value="f"/>
 								</td>
 							</tr>
+							
 							<tr>
 								<td valign="middle" align="right">
-									sex:
+									验证码:
+									<img id="num" src="image" />
+									<a href="javascript:;" onclick="document.getElementById('num').src = 'image?'+(new Date()).getTime()">换一张</a>
 								</td>
 								<td valign="middle" align="left">
-									<select name="sex">
-										<option value="true">男</option>
-										<option value="false">女</option>
-									</select>
+									<input type="text" class="inputgri" name="number" />
 								</td>
 							</tr>
 						</table>
 						<p>
-							<input type="submit" class="button" value="提交" />
+							<input type="submit" class="button" value="Submit &raquo;" />
 						</p>
 					</form>
 				</div>
 			</div>
 			<div id="footer">
 				<div id="footer_bg">
-					ABC@126.com
+				ABC@126.com
 				</div>
 			</div>
 		</div>

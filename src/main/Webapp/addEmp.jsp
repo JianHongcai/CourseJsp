@@ -1,9 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html >
 	<head>
-		<title>update Emp</title>
+		<title>add Emp</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link rel="stylesheet" type="text/css"
+			href="./css/style.css" />
 	</head>
 
 	<body>
@@ -28,25 +30,17 @@
 					<p id="whereami">
 					</p>
 					<h1>
-						更新员工信息:
+						添加员工信息:
 					</h1>
-					<form action="" method="post">
+					<form th:action="@{/emp/save}" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
-							<tr>
-								<td valign="middle" align="right">
-									id:
-								</td>
-								<td valign="middle" align="left" >
-									<input value="1" name="id" readonly />
-								</td>
-							</tr>
 							<tr>
 								<td valign="middle" align="right">
 									name:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="name" value="张三"/>
+									<input type="text" class="inputgri" name="name" />
 								</td>
 							</tr>
 							<tr>
@@ -54,7 +48,7 @@
 									salary:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="salary" value="2300"/>
+									<input type="text" class="inputgri" name="salary" />
 								</td>
 							</tr>
 							<tr>
@@ -62,7 +56,7 @@
 									bir:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="bir" value="2012/12/12"/>
+									<input type="text" class="inputgri" name="bir" />
 								</td>
 							</tr>
 							<tr>
@@ -78,7 +72,7 @@
 							</tr>
 						</table>
 						<p>
-							<input type="submit" class="button" value="Confirm" />
+							<input type="submit" class="button" value="提交" />
 						</p>
 					</form>
 				</div>
