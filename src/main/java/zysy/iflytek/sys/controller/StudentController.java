@@ -2,6 +2,7 @@ package zysy.iflytek.sys.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import zysy.iflytek.common.utils.VerifyCodeUtils;
@@ -12,15 +13,26 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.List;
 
 @RestController
 @RequestMapping("sys/student")
-public class Controller {
+public class StudentController {
 
     @Autowired
     private StudentService studentService;
+
+
+    @PostMapping("/register")
+    public String register(Student student,String code){
+        System.out.println(student.getMobile());
+        System.out.println(student.getUserName());
+        System.out.println(code);
+
+        return "";
+    }
+
+
 
     @GetMapping("/list")
     public List<Student> list(){

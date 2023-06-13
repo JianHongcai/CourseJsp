@@ -27,6 +27,11 @@ public class Student implements Serializable {
     private String mobile;
 
     /**
+     * 密码
+     */
+    private String password;
+
+    /**
      * 用户名
      */
     private String userName;

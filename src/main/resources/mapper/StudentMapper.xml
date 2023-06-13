@@ -7,6 +7,7 @@
     <resultMap id="BaseResultMap" type="zysy.iflytek.sys.pojo.Student">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="userName" column="user_name" jdbcType="VARCHAR"/>
             <result property="sex" column="sex" jdbcType="TINYINT"/>
             <result property="age" column="age" jdbcType="TINYINT"/>
