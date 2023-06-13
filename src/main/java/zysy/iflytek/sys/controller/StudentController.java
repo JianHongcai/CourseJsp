@@ -24,7 +24,14 @@ public class StudentController {
 
 
     @PostMapping("/register")
-    public String register(Student student,String code){
+    public String register(Student student,String code,HttpSession session){
+        //验证码校验
+        String codeTmp = session.getAttribute("code").toString();
+        if(!codeTmp.equals(code)){
+            System.out.println("code-codeTmp"+ code + "-" + codeTmp);
+           throw new RuntimeException("验证码错误！");
+        }
+
         System.out.println(student.getMobile());
         System.out.println(student.getUserName());
         System.out.println(code);
