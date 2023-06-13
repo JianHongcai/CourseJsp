@@ -27,6 +27,20 @@ public class StudentController {
     private StudentService studentService;
 
 
+    @PostMapping("/login")
+    public String login(String userName ,String password) throws UnsupportedEncodingException {
+
+        try {
+            studentService.login(userName,password);
+
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return "redirect:/login.jsp?msg=" + URLEncoder.encode(e.getMessage(),"UTF-8");
+        }
+        return "redirect:/emplist.jsp";
+    }
+
+
     @PostMapping("/register")
     public String register(Student student,String code,HttpSession session) throws UnsupportedEncodingException {
         try {

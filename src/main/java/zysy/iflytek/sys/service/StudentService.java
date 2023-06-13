@@ -11,4 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface StudentService extends IService<Student> {
 
     void register(Student student);
+
+    void login(String userName, String password);
 }

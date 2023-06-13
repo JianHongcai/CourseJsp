@@ -32,7 +32,10 @@
 					<h1>
 						login
 					</h1>
-					<form action="emplist.html" method="post">
+					<h1>
+						${param.msg}
+					</h1>
+					<form action="/sys/student/login" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
 							<tr>
@@ -40,7 +43,7 @@
 									username:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="name" />
+									<input type="text" class="inputgri" name="userName" />
 								</td>
 							</tr>
 							<tr>
@@ -48,7 +51,7 @@
 									password:
 								</td>
 								<td valign="middle" align="left">
-									<input type="password" class="inputgri" name="pwd" />
+									<input type="password" class="inputgri" name="password" />
 								</td>
 							</tr>
 						</table>

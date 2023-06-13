@@ -1,5 +1,6 @@
 package zysy.iflytek.sys.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.util.DigestUtils;
@@ -41,6 +42,25 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student>
 
         baseMapper.insert(student);
 
+
+    }
+
+    @Override
+    public void login(String userName, String password) {
+        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(Student::getUserName,userName);
+        boolean exists = baseMapper.exists(queryWrapper);
+        if (!exists){
+            throw new RuntimeException("用户名输入错误");
+        }
+
+
+
+//        LambdaQueryWrapper<Student> eq = queryWrapper.lambda().eq(Student::getPassword, password);
+        String pwdSecret = DigestUtils.md5DigestAsHex(password.getBytes(StandardCharsets.UTF_8));
+        queryWrapper.lambda().eq(Student::getUserName,userName).eq(Student::getPassword,pwdSecret);
+        boolean exists1 = baseMapper.exists(queryWrapper);
+       if(!exists1) throw new RuntimeException("密码输入错误");
 
     }
 }
