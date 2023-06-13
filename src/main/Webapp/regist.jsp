@@ -30,6 +30,10 @@
 					<h1>
 						注册
 					</h1>
+					<h1>
+						${param.msg}
+					</h1>
+
 					<form action="/sys/student/register" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">

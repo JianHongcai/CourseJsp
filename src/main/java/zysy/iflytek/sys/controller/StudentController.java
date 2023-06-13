@@ -1,6 +1,7 @@
 package zysy.iflytek.sys.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +14,12 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
-@RestController
+//@RestController
+@Controller
 @RequestMapping("sys/student")
 public class StudentController {
 
@@ -24,20 +28,22 @@ public class StudentController {
 
 
     @PostMapping("/register")
-    public String register(Student student,String code,HttpSession session){
-        //验证码校验
-        String codeTmp = session.getAttribute("code").toString();
-        if(!codeTmp.equals(code)){
-            System.out.println("code-codeTmp"+ code + "-" + codeTmp);
-           throw new RuntimeException("验证码错误！");
+    public String register(Student student,String code,HttpSession session) throws UnsupportedEncodingException {
+        try {
+            //验证码校验
+            String codeTmp = session.getAttribute("code").toString();
+            if(!codeTmp.equals(code)){
+                System.out.println("code-codeTmp"+ code + "-" + codeTmp);
+               throw new RuntimeException("验证码错误！");
+            }
+            studentService.register(student);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return "redirect:/regist.jsp?msg=" + URLEncoder.encode(e.getMessage(),"UTF-8");
         }
 
-       studentService.register(student);
 
-
-
-
-        return "";
+        return "redirect:/login.jsp";
     }
 
 
