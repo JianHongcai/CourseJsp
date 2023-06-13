@@ -32,9 +32,10 @@ public class StudentController {
            throw new RuntimeException("验证码错误！");
         }
 
-        System.out.println(student.getMobile());
-        System.out.println(student.getUserName());
-        System.out.println(code);
+       studentService.register(student);
+
+
+
 
         return "";
     }
