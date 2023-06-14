@@ -2,6 +2,7 @@ package zysy.iflytek.edu.controller;
 
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,19 @@ public class CourseController {
         courseService.save(course);
         return "redirect:/edu/course/list";
     }
+
+
+
+
+
+
+
+        @RequestMapping("/delete")
+        public String delete(Integer id){
+            courseService.removeById(id);
+
+            return "redirect:/edu/course/list";
+        }
 
 
 

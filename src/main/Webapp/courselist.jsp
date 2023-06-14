@@ -58,8 +58,8 @@
 								<td >${course.courseName}</td>
 								<td ><fmt:formatDate value="${course.createTime}" pattern="yyyy-MM-dd"/> </td>
 								<td>
-									<a href="">删除</a>&nbsp;
-									<a href="updatecourse.jsp">修改</a>
+									<a href="${pageContext.request.contextPath}/edu/course/delete?id=${course.id}">删除</a>&nbsp;
+									<a href="${pageContext.request.contextPath}/updatecourse.jsp">修改</a>
 								</td>
 							</tr>
 						</c:forEach>
