@@ -19,6 +19,14 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+    @PostMapping("/add")
+    public String add(Course course){
+        courseService.save(course);
+        return "redirect:/edu/course/list";
+    }
+
+
+
     @GetMapping("/list")
     public String list(HttpServletRequest request){
         List<Course> list = courseService.list();

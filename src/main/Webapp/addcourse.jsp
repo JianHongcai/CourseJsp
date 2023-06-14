@@ -32,47 +32,46 @@
 					<h1>
 						添加员工信息:
 					</h1>
-					<form th:action="@{/emp/save}" method="post">
+					<form action="${pageContext.request.contextPath}/edu/course/add" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
 							<tr>
 								<td valign="middle" align="right">
-									name:
+									ID:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="name" />
+									<input type="text" class="inputgri" name="id" />
 								</td>
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									salary:
+									课程号:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="salary" />
+									<input type="text" class="inputgri" name="courseCno" />
 								</td>
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									bir:
+									课程名称:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="bir" />
+									<input type="text" class="inputgri" name="courseName" />
 								</td>
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									sex:
+									创建时间:
 								</td>
 								<td valign="middle" align="left">
-									<select name="sex">
-										<option value="true">男</option>
-										<option value="false">女</option>
-									</select>
+									<input type="text" class="inputgri" name="createTime" />
 								</td>
 							</tr>
+
 						</table>
 						<p>
 							<input type="submit" class="button" value="提交" />
+							<a href="${pageContext.request.contextPath}/edu/course/list">返回</a>
 						</p>
 					</form>
 				</div>
