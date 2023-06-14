@@ -56,8 +56,8 @@
 							</tr>
 						</table>
 						<p>
-							<input type="submit" class="button" value="Submit &raquo;" />
-							<input type="button" class="button" onclick="location.href='./regist.html'" value="Regist &raquo;" />
+							<input type="submit" class="button" value="提交 " />
+							<input type="button" class="button" onclick="location.href='./regist.jsp'" value="注册 &raquo;" />
 						</p>
 					</form>
 				</div>

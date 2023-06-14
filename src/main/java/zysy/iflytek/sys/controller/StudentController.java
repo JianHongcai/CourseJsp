@@ -37,7 +37,7 @@ public class StudentController {
             e.printStackTrace();
             return "redirect:/login.jsp?msg=" + URLEncoder.encode(e.getMessage(),"UTF-8");
         }
-        return "redirect:/emplist.jsp";
+        return "redirect:/edu/course/list";
     }
 
 

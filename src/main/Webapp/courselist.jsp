@@ -1,10 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<title>emplist</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -36,32 +38,31 @@
 								ID
 							</td>
 							<td>
-								Name
+								课程编号
 							</td>
 							<td>
-								Salary
+								课程名称
 							</td>
 							<td>
-								Bir
+								创建时间
 							</td>
-							<td>
-								Sex
-							</td>
+
 							<td>
 								Operation
 							</td>
 						</tr>
-						<tr class="row1">
-							<td >1</td>
-							<td >张三</td>
-							<td >2300</td>
-							<td >2012-12-12</td>
-							<td >男</td>
-							<td>
-								<a href="">删除</a>&nbsp;
-								<a href="updateEmp.jsp">更新</a>
-							</td>
-						</tr>
+						<c:forEach items="${requestScope.courselist}" var="course">
+							<tr class="row1">
+								<td >${course.id}</td>
+								<td >${course.courseCno}</td>
+								<td >${course.courseName}</td>
+								<td ><fmt:formatDate value="${course.createTime}" pattern="yyyy-MM-dd"/> </td>
+								<td>
+									<a href="">删除</a>&nbsp;
+									<a href="updatecourse.jsp">修改</a>
+								</td>
+							</tr>
+						</c:forEach>
 
 					</table>
 					<p>
