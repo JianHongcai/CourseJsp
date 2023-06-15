@@ -70,7 +70,8 @@
 
 						</table>
 						<p>
-							<input type="submit" class="button" value="Confirm" />
+							<input type="submit" class="button" value="提交" />
+							<a class="button" href="${pageContext.request.contextPath}/edu/course/list">返回</a>
 						</p>
 					</form>
 				</div>
