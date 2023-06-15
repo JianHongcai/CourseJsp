@@ -2,6 +2,7 @@ package zysy.iflytek.edu.service;
 
 import zysy.iflytek.edu.pojo.Course;
 import com.baomidou.mybatisplus.extension.service.IService;
+import zysy.iflytek.sys.pojo.Teacher;
 
 /**
 * @author 简宏才
@@ -10,4 +11,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface CourseService extends IService<Course> {
 
+
+    Course selectById(Integer id);
+
+    int update(Course course, Integer id);
 }

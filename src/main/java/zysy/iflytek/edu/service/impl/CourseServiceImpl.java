@@ -15,6 +15,16 @@ import org.springframework.stereotype.Service;
 public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course>
     implements CourseService{
 
+    @Override
+    public Course selectById(Integer id) {
+        return baseMapper.selectById(id);
+    }
+
+    @Override
+    public int update(Course course, Integer id) {
+        return baseMapper.updateById(course);
+    }
+
 }
 
 

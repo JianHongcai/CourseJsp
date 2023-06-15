@@ -1,10 +1,11 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<title>update Emp</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
 	</head>
 
 	<body>
@@ -31,52 +32,42 @@
 					<h1>
 						更新员工信息:
 					</h1>
-					<form action="" method="post">
+					<form action="${pageContext.request.contextPath}/edu/course/update" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
 							class="form_table">
 							<tr>
 								<td valign="middle" align="right">
-									id:
+									ID:
 								</td>
-								<td valign="middle" align="left" >
-									<input value="1" name="id" readonly />
+								<td valign="middle" align="left">
+									<input value="${course.id}" type="text" class="inputgri" name="id" />
 								</td>
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									name:
+									课程号:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="name" value="张三"/>
+									<input value="${course.courseCno}" type="text" class="inputgri" name="courseCno" />
 								</td>
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									salary:
+									课程名称:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="salary" value="2300"/>
+									<input value="${course.courseName}" type="text" class="inputgri" name="courseName" />
 								</td>
 							</tr>
 							<tr>
 								<td valign="middle" align="right">
-									bir:
+									创建时间:
 								</td>
 								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="bir" value="2012/12/12"/>
+									<input  value="<fmt:formatDate value="${course.createTime}" pattern="yyyy/MM/dd"/>" type="text" class="inputgri" name="createTime" />
 								</td>
 							</tr>
-							<tr>
-								<td valign="middle" align="right">
-									sex:
-								</td>
-								<td valign="middle" align="left">
-									<select name="sex">
-										<option value="true">男</option>
-										<option value="false">女</option>
-									</select>
-								</td>
-							</tr>
+
 						</table>
 						<p>
 							<input type="submit" class="button" value="Confirm" />
