@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html >
 	<head>
-		<title>add Emp</title>
+		<title>add course</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css"
 			href="./css/style.css" />
@@ -59,14 +59,14 @@
 									<input type="text" class="inputgri" name="courseName" />
 								</td>
 							</tr>
-							<tr>
-								<td valign="middle" align="right">
-									创建时间:
-								</td>
-								<td valign="middle" align="left">
-									<input type="text" class="inputgri" name="createTime" />
-								</td>
-							</tr>
+<%--							<tr>--%>
+<%--								<td valign="middle" align="right">--%>
+<%--									创建时间:--%>
+<%--								</td>--%>
+<%--								<td valign="middle" align="left">--%>
+<%--									<input type="text" class="inputgri" name="createTime" />--%>
+<%--								</td>--%>
+<%--							</tr>--%>
 
 						</table>
 						<p>

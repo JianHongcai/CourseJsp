@@ -13,6 +13,7 @@ import zysy.iflytek.sys.pojo.Teacher;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -24,6 +25,8 @@ public class CourseController {
 
     @PostMapping("/add")
     public String add(Course course){
+        course.setCreateTime(new Date());
+        course.setUpdateTime(new Date());
         courseService.save(course);
         return "redirect:/edu/course/list";
     }
