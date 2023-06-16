@@ -59,7 +59,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student>
             throw new RuntimeException("密码输入错误");
         }
 
-        return student;
+        return stu;
     }
 }
 
