@@ -84,7 +84,7 @@
 
             </table>
             <p>
-                <a href="${pageContext.request.contextPath}/addcourse.jsp">添加员工信息</a>
+                <a href="${pageContext.request.contextPath}/addcourse.jsp">添加课程信息</a>
 
             </p>
         </div>

@@ -2,6 +2,9 @@ package zysy.iflytek.edu.mapper;
 
 import zysy.iflytek.edu.pojo.CourseStudyhistory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import zysy.iflytek.edu.vo.StudentandcourseVo;
+
+import java.util.List;
 
 /**
 * @author 简宏才
@@ -10,6 +13,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity zysy.iflytek.edu.pojo.CourseStudyhistory
 */
 public interface CourseStudyhistoryMapper extends BaseMapper<CourseStudyhistory> {
+
+    List<StudentandcourseVo> studentandcourselist();
 
 }
 

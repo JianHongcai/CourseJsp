@@ -20,4 +20,10 @@
         create_time,update_time,course_status,
         sort,is_deleted
     </sql>
+
+    <select id="studentandcourselist" resultType="zysy.iflytek.edu.vo.StudentandcourseVo">
+        SELECT history.id,course.course_cno,course.course_name,teacher.name,history.create_time
+        FROM edu_course course,sys_teacher teacher,edu_course_studyhistory history
+        WHERE history.course_id = course.id AND course.teacher_id = teacher.id
+    </select>
 </mapper>

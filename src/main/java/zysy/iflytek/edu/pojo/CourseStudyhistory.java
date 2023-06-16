@@ -30,6 +30,7 @@ public class CourseStudyhistory implements Serializable {
      * 学生id
      */
     private Integer studentId;
+    
 
     /**
      * 创建时间

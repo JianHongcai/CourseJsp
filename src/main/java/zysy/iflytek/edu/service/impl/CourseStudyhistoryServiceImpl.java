@@ -5,6 +5,9 @@ import zysy.iflytek.edu.pojo.CourseStudyhistory;
 import zysy.iflytek.edu.service.CourseStudyhistoryService;
 import zysy.iflytek.edu.mapper.CourseStudyhistoryMapper;
 import org.springframework.stereotype.Service;
+import zysy.iflytek.edu.vo.StudentandcourseVo;
+
+import java.util.List;
 
 /**
 * @author 简宏才
@@ -15,6 +18,10 @@ import org.springframework.stereotype.Service;
 public class CourseStudyhistoryServiceImpl extends ServiceImpl<CourseStudyhistoryMapper, CourseStudyhistory>
     implements CourseStudyhistoryService{
 
+    @Override
+    public List<StudentandcourseVo> studentandcourselist() {
+        return baseMapper.studentandcourselist();
+    }
 }
 
 

@@ -44,7 +44,7 @@
                         课程名称
                     </td>
                     <td>
-                        教师名称
+                        教师姓名
                     </td>
 
                     <td>
@@ -54,12 +54,13 @@
                         删除
                     </td>
                 </tr>
-                <c:forEach items="${requestScope.courselist}" var="course">
+                <c:forEach items="${requestScope.hislist}" var="his">
                     <tr class="row1">
-                        <td>${course.id}</td>
-                        <td>${course.courseCno}</td>
-                        <td>${course.courseName}</td>
-                        <td><fmt:formatDate value="${course.createTime}" pattern="yyyy-MM-dd"/></td>
+                        <td>${his.id}</td>
+                        <td>${his.courseCno}</td>
+                        <td>${his.courseName}</td>
+                        <td>${his.name}</td>
+                        <td><fmt:formatDate value="${his.createTime}" pattern="yyyy-MM-dd"/></td>
                         <td>
                             <a href="${pageContext.request.contextPath}/edu/course/delete?id=${course.id}">删除</a>&nbsp;
 

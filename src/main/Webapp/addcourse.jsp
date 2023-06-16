@@ -30,7 +30,7 @@
 					<p id="whereami">
 					</p>
 					<h1>
-						添加员工信息:
+						添加课程信息:
 					</h1>
 					<form action="${pageContext.request.contextPath}/edu/course/add" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
@@ -59,14 +59,21 @@
 									<input type="text" class="inputgri" name="courseName" />
 								</td>
 							</tr>
-<%--							<tr>--%>
-<%--								<td valign="middle" align="right">--%>
-<%--									创建时间:--%>
-<%--								</td>--%>
-<%--								<td valign="middle" align="left">--%>
-<%--									<input type="text" class="inputgri" name="createTime" />--%>
-<%--								</td>--%>
-<%--							</tr>--%>
+							<tr>
+								<td valign="middle" align="right">
+									课程老师:
+								</td>
+								<td valign="middle" align="left">
+									<select name="teacherId">
+										<option value="1">刘老师</option>
+										<option value="2">王老师</option>
+									</select>
+								</td>
+							</tr>
+
+
+
+
 
 						</table>
 						<p>

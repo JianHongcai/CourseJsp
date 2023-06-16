@@ -2,6 +2,9 @@ package zysy.iflytek.edu.service;
 
 import zysy.iflytek.edu.pojo.CourseStudyhistory;
 import com.baomidou.mybatisplus.extension.service.IService;
+import zysy.iflytek.edu.vo.StudentandcourseVo;
+
+import java.util.List;
 
 /**
 * @author 简宏才
@@ -10,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface CourseStudyhistoryService extends IService<CourseStudyhistory> {
 
+    List<StudentandcourseVo> studentandcourselist();
 }
