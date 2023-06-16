@@ -6,6 +6,8 @@ import io.swagger.models.auth.In;
 import nonapi.io.github.classgraph.json.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import zysy.iflytek.edu.pojo.Course;
 import zysy.iflytek.edu.service.CourseService;
@@ -40,12 +42,22 @@ public class CourseController {
         return "forward:/updatecourse.jsp";//跳转到页面
     }
 
-    @RequestMapping("/update")
-    public String updateCourse(Course course, Integer id) {
-        courseService.update(course, id);
+//    @RequestMapping("/update")
+//    public String updateCourse(Course course, Integer id) {
+//        courseService.update(course, id);
+//        return "redirect:/edu/course/list";
+//    }
+    @RequestMapping(value = "/update")
+    public Object update(Course course, BindingResult result) {
+        if(result.hasErrors()){
+            List<ObjectError> ls = result.getAllErrors();
+            for (int i = 0; i < ls.size(); i++) {
+                System.out.println("error:"+ls.get(i));
+            }
+        }
+        courseService.updateById(course);
         return "redirect:/edu/course/list";
     }
-
 
 
 

@@ -30,7 +30,7 @@
             <p id="whereami">
             </p>
             <h1>
-                选课列表
+                课程列表
             </h1>
             <table class="table">
                 <tr class="table_header">
@@ -62,7 +62,7 @@
                         <td>${his.name}</td>
                         <td><fmt:formatDate value="${his.createTime}" pattern="yyyy-MM-dd"/></td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/edu/course/delete?id=${course.id}">删除</a>&nbsp;
+                            <a href="${pageContext.request.contextPath}/edu/courseStudyhistory/delete?id=${his.id}">删除</a>&nbsp;
 
                         </td>
                     </tr>

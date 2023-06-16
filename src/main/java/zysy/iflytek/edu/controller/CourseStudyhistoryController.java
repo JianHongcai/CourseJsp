@@ -39,7 +39,12 @@ public class CourseStudyhistoryController {
         return "redirect:/edu/courseStudyhistory/list";
     }
 
+    @RequestMapping("/delete")
+    public String delete(Integer id){
+        historyService.removeById(id);
 
+        return "redirect:/edu/courseStudyhistory/list";
+    }
 
 
 
