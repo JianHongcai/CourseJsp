@@ -41,7 +41,7 @@ public class CourseController {
     }
 
     @RequestMapping("/update")
-    public String updateTeacher(Course course, Integer id) {
+    public String updateCourse(Course course, Integer id) {
         courseService.update(course, id);
         return "redirect:/edu/course/list";
     }

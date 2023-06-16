@@ -30,7 +30,7 @@
 					<p id="whereami">
 					</p>
 					<h1>
-						更新员工信息:
+						更新课程信息:
 					</h1>
 					<form action="${pageContext.request.contextPath}/edu/course/update" method="post">
 						<table cellpadding="0" cellspacing="0" border="0"
