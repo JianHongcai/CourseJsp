@@ -14,7 +14,7 @@
         <div id="header">
             <div id="rightheader">
                 <p>
-                    2009/11/20
+                    2023/10/15
                     <br/>
                 </p>
             </div>
@@ -30,11 +30,8 @@
             <p id="whereami">
             </p>
             <h1>
-                Welcome !
+                选课列表
             </h1>
-            <h3>
-               ${sessionScope.student.id}----${sessionScope.student.userName}
-            </h3>
             <table class="table">
                 <tr class="table_header">
                     <td>
@@ -47,11 +44,14 @@
                         课程名称
                     </td>
                     <td>
-                        创建时间
+                        教师名称
                     </td>
 
                     <td>
-                        Operation
+                        选课时间
+                    </td>
+                    <td>
+                        删除
                     </td>
                 </tr>
                 <c:forEach items="${requestScope.courselist}" var="course">
@@ -62,21 +62,6 @@
                         <td><fmt:formatDate value="${course.createTime}" pattern="yyyy-MM-dd"/></td>
                         <td>
                             <a href="${pageContext.request.contextPath}/edu/course/delete?id=${course.id}">删除</a>&nbsp;
-                            <a href="${pageContext.request.contextPath}/edu/course/detail?id=${course.id}">修改</a>
-
-                            <form id="his_${course.id}"
-									action="${pageContext.request.contextPath}/edu/courseStudyhistory/add" method="post">
-								<input type="hidden" name="studentId" value="${sessionScope.student.id}">
-								<input type="hidden" name="courseId" value="${course.id}">
-								<a style="color: #CE7979;cursor: pointer"
-								   onclick="document.getElementById('his_${course.id}').submit();">选课</a>
-							</form>
-
-
-
-
-
-
 
                         </td>
                     </tr>
@@ -84,7 +69,7 @@
 
             </table>
             <p>
-                <a href="${pageContext.request.contextPath}/addcourse.jsp">添加员工信息</a>
+                <a href="${pageContext.request.contextPath}/edu/course/list">返回</a>
 
             </p>
         </div>
