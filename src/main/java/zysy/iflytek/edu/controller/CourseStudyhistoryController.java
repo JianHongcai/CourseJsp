@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import zysy.iflytek.edu.pojo.Course;
 import zysy.iflytek.edu.pojo.CourseStudyhistory;
 import zysy.iflytek.edu.service.CourseStudyhistoryService;
+import zysy.iflytek.edu.vo.StudentandcourseVo;
 import zysy.iflytek.sys.pojo.Student;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ public class CourseStudyhistoryController {
 
     @GetMapping("/list")
     public String list(HttpServletRequest request){
-        List<CourseStudyhistory> hisList = historyService.list();
+        List<StudentandcourseVo> hisList = historyService.studentandcourselist();
         request.setAttribute("hislist",hisList);
         return "forward:/historylist.jsp";
     }
@@ -37,6 +38,10 @@ public class CourseStudyhistoryController {
         historyService.save(history);
         return "redirect:/edu/courseStudyhistory/list";
     }
+
+
+
+
 
 
 }
