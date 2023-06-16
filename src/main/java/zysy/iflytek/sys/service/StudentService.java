@@ -12,5 +12,5 @@ public interface StudentService extends IService<Student> {
 
     void register(Student student);
 
-    void login(String userName, String password);
+    Student login(Student student,String username,String password);
 }

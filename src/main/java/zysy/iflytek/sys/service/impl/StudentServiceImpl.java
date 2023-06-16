@@ -46,22 +46,20 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student>
     }
 
     @Override
-    public void login(String userName, String password) {
-        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(Student::getUserName,userName);
-        boolean exists = baseMapper.exists(queryWrapper);
-        if (!exists){
+    public Student login(Student student,String username,String password) {
+        QueryWrapper<Student>queryWrapper=new QueryWrapper<>();
+        queryWrapper.lambda().eq(Student::getUserName,student.getUserName());
+        Student stu=baseMapper.selectOne(queryWrapper);
+        if (Objects.isNull(stu)) {
             throw new RuntimeException("用户名输入错误");
         }
 
+        String digestPassword=DigestUtils.md5DigestAsHex(password.getBytes(StandardCharsets.UTF_8));
+        if(!stu.getPassword().equals(digestPassword)){
+            throw new RuntimeException("密码输入错误");
+        }
 
-
-//        LambdaQueryWrapper<Student> eq = queryWrapper.lambda().eq(Student::getPassword, password);
-        String pwdSecret = DigestUtils.md5DigestAsHex(password.getBytes(StandardCharsets.UTF_8));
-        queryWrapper.lambda().eq(Student::getUserName,userName).eq(Student::getPassword,pwdSecret);
-        boolean exists1 = baseMapper.exists(queryWrapper);
-       if(!exists1) throw new RuntimeException("密码输入错误");
-
+        return student;
     }
 }
 

@@ -27,15 +27,15 @@ public class StudentController {
     private StudentService studentService;
 
 
-    @PostMapping("/login")
-    public String login(String userName ,String password) throws UnsupportedEncodingException {
-
+    @PostMapping("login")
+    public String login(Student student, String username, String password, HttpSession session) throws UnsupportedEncodingException {
         try {
-            studentService.login(userName,password);
+            Student stu = studentService.login(student, username, password);
 
-        } catch (RuntimeException e) {
+            session.setAttribute("student", stu);
+        } catch (Exception e) {
             e.printStackTrace();
-            return "redirect:/login.jsp?msg=" + URLEncoder.encode(e.getMessage(),"UTF-8");
+            return "redirect:/login.jsp?msg=" + URLEncoder.encode(e.getMessage(), "UTF-8");
         }
         return "redirect:/edu/course/list";
     }
